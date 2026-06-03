@@ -90,7 +90,7 @@ export function HeroSection() {
                 <defs>
                   <path
                     id="heroCirclePath"
-                    d="M 310 10 A 300 300 0 1 1 309.99 10"
+                    d="M 310 30 A 280 280 0 1 1 309.99 30"
                   />
                 </defs>
                 <text
