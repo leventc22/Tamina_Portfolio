@@ -75,22 +75,8 @@ export function HeroSection() {
         >
           {/* Portrait + decorations wrapper */}
           <div className="relative w-full max-w-[525px] h-auto md:w-[525px] md:h-[672px] mx-auto">
-            <div className="absolute rounded-full bg-[#F0DDD6] z-0 left-1/2 -translate-x-1/2 top-0 md:left-auto md:translate-x-0 md:-bottom-[80px] md:-right-[100px] w-[450px] h-[450px] md:w-[650px] md:h-[650px]" />
-
-            <div className="relative z-20 w-full h-full overflow-hidden rounded-full">
-              <ImageWithFallback
-                src={PORTRAIT_URL}
-                alt="Tamina Ceylan"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "center center",
-                }}
-              />
-            </div>
-
-            <div className="absolute z-10 pointer-events-none left-1/2 -translate-x-1/2 top-[52%] md:left-[50%] md:top-[48%] w-[520px] h-[520px] md:w-[690px] md:h-[690px]">
+            <div className="absolute z-0 left-1/2 -translate-x-1/2 top-0 md:left-auto md:translate-x-0 md:-bottom-[80px] md:-right-[100px] w-[450px] h-[450px] md:w-[650px] md:h-[650px] rounded-full overflow-visible flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full bg-[#F0DDD6]" />
               <motion.svg
                 animate={{ rotate: 360 }}
                 transition={{
@@ -98,13 +84,13 @@ export function HeroSection() {
                   ease: "linear",
                   repeat: Infinity,
                 }}
-                className="w-full h-full"
+                className="w-full h-full z-10 pointer-events-none"
                 viewBox="0 0 620 620"
               >
                 <defs>
                   <path
                     id="heroCirclePath"
-                    d="M 310 30 A 280 280 0 1 1 309.99 30"
+                    d="M 310 10 A 300 300 0 1 1 309.99 10"
                   />
                 </defs>
                 <text
@@ -120,6 +106,20 @@ export function HeroSection() {
                 </text>
               </motion.svg>
             </div>
+
+            <div className="relative z-20 w-full h-full overflow-hidden rounded-full" style={{ transform: "translateX(40px)" }}>
+              <ImageWithFallback
+                src={PORTRAIT_URL}
+                alt="Tamina Ceylan"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  objectPosition: "100% 90%",
+                }}
+              />
+            </div>
+            
           </div>
         </motion.div>
       </div>
