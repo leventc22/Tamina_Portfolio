@@ -5,6 +5,7 @@ interface TimelineEntry {
   org: string;
   period: string;
   url?: string;
+  urlText?: string;
 }
 
 const berufserfahrung: TimelineEntry[] = [
@@ -12,7 +13,8 @@ const berufserfahrung: TimelineEntry[] = [
     title: "Schmuckstylistin & Verkäuferin",
     org: "Suheylx — Eigene Schmuckmarke",
     period: "seit März 2025",
-    url: "www.suheylx.de",
+    url: "https://taminacey.wixsite.com/suheylx",
+    urlText: "Suheylx. | besonderer Schmuck",
   },
   {
     title: "Persönliche Assistenz",
@@ -132,7 +134,17 @@ function Entry({
             marginTop: 8,
           }}
         >
-          {entry.url}
+          <a
+            href={entry.url}
+            target="_blank"
+            rel="noreferrer noopener"
+            style={{
+              color: "#D88F78",
+              textDecoration: "none",
+            }}
+          >
+            {entry.urlText ?? entry.url}
+          </a>
         </div>
       )}
       {!isLast && (
